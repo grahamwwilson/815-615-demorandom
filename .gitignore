@@ -1,2 +1,4 @@
 .mynewnotes
-.mynotes
+*.pdf
+*.png
+*.root

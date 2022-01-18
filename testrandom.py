@@ -49,7 +49,7 @@ rg2 = ROOT.TRandom1(4359,4)
 #rg2 = ROOT.TRandom3(4359)
 
 for i in range(100000):
-# Generate and check distributions of two random numbers
+# Generate and check distributions of two uniform random numbers, u ~ Un(0,1)
     u1 = rg1.Rndm()
     u2 = rg2.Rndm()
 # Note u1 and u2 should be independent
@@ -85,24 +85,25 @@ for i in range(100000):
 # End of loop
 
 # Create drawing canvas
-c1 = ROOT.TCanvas("c1","c1");
+c1 = ROOT.TCanvas("c1","c1",1200,800);
 # Draw the histograms and save to pdf files
 h1.Draw()
-c1.Print("h1.pdf")
+gchoice=".png"    # could be also eg ".pdf"
+c1.Print("h1"+gchoice)
 h2.Draw()
-c1.Print("h2.pdf")
+c1.Print("h2"+gchoice)
 hexp.Draw()
-c1.Print("hexp.pdf")
+c1.Print("hexp"+gchoice)
 hray.Draw()
-c1.Print("hray.pdf")
+c1.Print("hray"+gchoice)
 hgau.Draw()
-c1.Print("hgau.pdf")
+c1.Print("hgau"+gchoice)
 hgaud.Draw()
-c1.Print("hgaud.pdf")
+c1.Print("hgaud"+gchoice)
 hgau2.Draw()
-c1.Print("hgau2.pdf")
+c1.Print("hgau2"+gchoice)
 huni2.Draw()
-c1.Print("huni2.pdf")
+c1.Print("huni2"+gchoice)
 
 # Save the histograms to a file for potential 
 # later inspection directly in ROOT
